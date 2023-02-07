@@ -1,6 +1,6 @@
-	SV Plugin Boilerplate
+	SV Wishlist for WooCommerce
 	Code (c) 2023 straightvisions GmbH
-	Project Leader:  Dennis Heiden
+	Project Leader:  Matthias Bathke
 	Project Website: https://straightvisions.com
 
 	This program is free software: you can redistribute it and/or modify

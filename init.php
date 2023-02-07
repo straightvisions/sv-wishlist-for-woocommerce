@@ -1,6 +1,6 @@
 <?php
 
-	namespace sv_plugin_boilerplate;
+	namespace sv_wishlist_for_woocommerce;
 	
 	if(!class_exists('\sv_core\core_plugin')) {
 		require_once(dirname(__FILE__) . '/lib/core_plugin/core_plugin.php');

@@ -1,9 +1,9 @@
 <?php
-	namespace sv_plugin_boilerplate;
+	namespace sv_wishlist_for_woocommerce;
 	
-	class example_scripts extends modules {
+	class common extends modules {
 		public function init() {
-			$this->set_section_title( __( 'Example: Scripts', 'sv_plugin_boilerplate' ) )
+			$this->set_section_title( __( 'Common', 'sv_wishlist_for_woocommerce' ) )
 				->set_section_type( 'settings' )
 				->load_settings()
 				->get_root()->add_section( $this );
@@ -12,10 +12,9 @@
 				$this->register_scripts();
 			}
 		}
-		protected function load_settings(): example_scripts{
+		protected function load_settings(): common{
 			$this->get_setting( 'activate' )
-				->set_title( __( 'Enable Feature', 'sv100_premium' ) )
-				->set_description( __( 'Description', 'sv100_premium' ) )
+				->set_title( __( 'Enable Wishlist', 'sv100_premium' ) )
 				->load_type( 'checkbox' );
 				
 			return $this;
@@ -32,7 +31,7 @@
 
 			return true;
 		}
-		protected function register_scripts(): example_scripts{
+		protected function register_scripts(): common{
 			$this->get_script('common')
 				->set_path('lib/css/common/common.css')
 				->set_is_enqueued();

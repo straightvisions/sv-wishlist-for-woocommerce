@@ -1,9 +1,8 @@
 <?php
-	namespace sv_plugin_boilerplate;
+	namespace sv_wishlist_for_woocommerce;
 	
 	class modules extends init {
 		public function init() {
-			$this->load_module('example_shortcode');
-			$this->load_module('example_scripts');
+			$this->load_module('common');
 		}
 	}
