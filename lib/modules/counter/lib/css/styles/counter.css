@@ -1,0 +1,19 @@
+.wp-block-group.is-style-wishlist-counter{
+	cursor:pointer;
+	position:relative;
+}
+.wp-block-group.is-style-wishlist-counter > i.count{
+	position:absolute;
+	font-style: normal;
+	top:-10px;
+	right:-10px;
+	color:var(--wp--preset--color--white);
+	background-color:var(--wp--preset--color--red);
+	border-radius:100%;
+	font-size:10px;
+	font-weight:700;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	line-height: 16px;
+}

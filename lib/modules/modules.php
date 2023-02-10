@@ -3,6 +3,7 @@
 	
 	class modules extends init {
 		public function init() {
-			$this->load_module('common');
+			$this->load_module('counter');
+			$this->load_module('add_entry');
 		}
 	}
