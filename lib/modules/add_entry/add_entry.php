@@ -7,9 +7,10 @@
 
 			add_filter( 'render_block', array($this, 'render_block'), 10, 2 );
 			add_filter( 'woocommerce_blocks_product_grid_item_html', array($this, 'woocommerce_blocks_product_grid_item_html'), 10, 3);
+			add_action( 'woocommerce_after_add_to_cart_button', array($this, 'woocommerce_after_add_to_cart_button') );
 		}
 		protected function register_scripts(): add_entry{
-			$this->get_script('add_entry')
+			$this->get_script('common')
 				->set_path('lib/css/common/common.css')
 				->set_is_enqueued();
 
@@ -46,8 +47,15 @@
 				return $block_content;
 			}
 
+			$this->get_script('common')->set_is_enqueued();
+
 			$add_entry = '<span class="'.$this->get_prefix().'" data-id="'.$product->get_ID().'"></span>';
 
 			return str_replace('<img', $add_entry.'<img', $block_content);
+		}
+		public function woocommerce_after_add_to_cart_button(){
+			$this->get_script('common')->set_is_enqueued();
+
+			echo '<span class="'.$this->get_prefix().'" data-id="'.get_the_ID().'"></span>';
 		}
 	}

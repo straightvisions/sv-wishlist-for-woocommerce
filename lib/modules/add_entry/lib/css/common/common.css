@@ -1,10 +1,9 @@
 .wc-block-grid__product-image{
 	position:relative;
 }
-.wc-block-grid__product-image .sv_wishlist_for_woocommerce_add_entry {
-	content:'';
+.sv_wishlist_for_woocommerce_add_entry {
+	cursor:pointer;
 	display:inline-block;
-	margin: 0 6px 0 0;
 	-webkit-mask-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJtMTYsMzEuMzZMMi45MSwxOC4zYy0xLjYzLTEuNjYtMi42Mi0zLjk0LTIuNjItNi40M3MuOTktNC43NywyLjYyLTYuNDNoMGMxLjYtMS42LDMuODctMi42Niw2LjM3LTIuNjZzNC43LDEuMDYsNi4zNywyLjY2aDBsLjM1LjQyLjM1LS40MmMxLjY2LTEuNiwzLjktMi42Niw2LjM3LTIuNjZzNC43NywxLjA2LDYuMzcsMi42NmgwYzEuNjYsMS42NiwyLjYyLDMuOTQsMi42Miw2LjQzcy0uOTYsNC43Ny0yLjYyLDYuNDNoMGwtMTMuMDksMTMuMDZaTTkuMjgsNS4wNmgtLjAzYy0xLjg5LDAtMy41OC43Ny00Ljc3LDEuOThoMGMtMS4yMiwxLjI1LTEuOTgsMi45NC0xLjk4LDQuODNzLjc3LDMuNTgsMS45OCw0LjhoMGwxMS41MiwxMS41MiwxMS41Mi0xMS41MmMxLjIyLTEuMjIsMS45OC0yLjkxLDEuOTgtNC44cy0uNzctMy41OC0xLjk4LTQuODNoMGMtMS4yMi0xLjIyLTIuODgtMS45OC00Ljc3LTEuOThzLTMuNTUuNzctNC43NywxLjk4aDBsLTEuOTgsMS45NS0xLjk4LTEuOTVjLTEuMjItMS4yMi0yLjg4LTEuOTgtNC43NC0xLjk4aDBaIi8+PC9zdmc+');
 	-webkit-mask-size: contain;
 	-webkit-mask-position: center bottom;
@@ -17,7 +16,11 @@
 	right: 5px;
 	transition: background-color 0.2s ease-in-out;
 }
-.wc-block-grid__product-image .sv_wishlist_for_woocommerce_add_entry.added {
+.single-product .sv_wishlist_for_woocommerce_add_entry {
+	top:calc(var(--wp--custom--sv-spacing) / 2);
+	right:calc(var(--wp--custom--sv-spacing) / 2);
+}
+.sv_wishlist_for_woocommerce_add_entry.added {
 	-webkit-mask-image: url('data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNNDYyLjMgNjIuNkM0MDcuNSAxNS45IDMyNiAyNC4zIDI3NS43IDc2LjJMMjU2IDk2LjVsLTE5LjctMjAuM0MxODYuMSAyNC4zIDEwNC41IDE1LjkgNDkuNyA2Mi42Yy02Mi44IDUzLjYtNjYuMSAxNDkuOC05LjkgMjA3LjlsMTkzLjUgMTk5LjhjMTIuNSAxMi45IDMyLjggMTIuOSA0NS4zIDBsMTkzLjUtMTk5LjhjNTYuMy01OC4xIDUzLTE1NC4zLTkuOC0yMDcuOXoiLz48L3N2Zz4=');
 	background-color:var(--wp--preset--color--red);
 }
