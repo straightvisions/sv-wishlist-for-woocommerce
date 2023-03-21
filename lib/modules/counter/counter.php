@@ -20,7 +20,10 @@
 				->set_localized(array(
 					'ajax_url'         => admin_url( 'admin-ajax.php' )
 				))
-				->set_is_enqueued();
+				->set_is_enqueued()
+				->set_deps(array($this->get_active_core()->get_script('object_watcher_js')->get_handle()));;
+
+			$this->lib_enqueue('object_watcher');
 
 			return $this;
 		}
@@ -48,17 +51,27 @@
 				'post_type'         => 'product', // prevent queries for other post types
 				'posts_per_page'    => 50, // limit max entries to prevent abuse of this query
 			);
-			
-			var_dump(wc_get_products($args));
 
-			die('end');
+			$products   = wc_get_products($args);
 
-			if(!isset($_POST['sv-add-to-cart'])){
+			if(!$products || count($products) === 0){
 				$this->send_response(array(
 					'status'    => 'error',
-					'msg'       => __('Item ID missing', 'sv_baaboo_custom')
+					'msg'       => __('No Items found', 'sv_baaboo_custom')
 				));
 			}
+
+			ob_start();
+			require_once($this->get_path('lib/tpl/frontend/init.php'));
+			$output     = ob_get_clean();
+
+			array_walk($products, function(&$value){ $value = strval($value->get_ID()); });
+
+			$this->send_response(array(
+				'status'    => 'success',
+				'msg'       => $output,
+				'items'     => $products
+			), 200);
 		}
 		public function send_response(array $response, $status_code = 500){
 			wp_send_json($response, $status_code);
